@@ -64,7 +64,14 @@ while end == 'False':
                 end = 'True'
             break
 
-    while attempts > 0:
+    while attempts >= 0:
+
+        if attempts == 0:
+            print('\nYou\'ve run out of attempts! The word was: ' + random_movie)
+            continue_game = input('Do you want to continue the game (y/n):')
+            if continue_game == 'n':
+                end = 'True'
+                break
 
         print('\nCurrent word: ' + ' '.join(guessedWord))
 
